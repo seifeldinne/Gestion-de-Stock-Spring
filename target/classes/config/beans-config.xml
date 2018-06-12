@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:s="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+	<bean id="articleDao" class="org.tuto1.com.dao.imp.ArticleDAOImp" />
+	<bean id="commandeclientDao" class="org.tuto1.com.dao.imp.CommadeClientDAOImp" />
+	<bean id="categorieDao" class="org.tuto1.com.dao.imp.CategorieDaoImp" />
+	<bean id="clientDao" class="org.tuto1.com.dao.imp.ClientDaoImp" />
+	<bean id="commandefournisseurDao" class="org.tuto1.com.dao.imp.CommandeFournisseurDaoImp" />
+	<bean id="fournisseurDao" class="org.tuto1.com.dao.imp.FournisseurDaoImp" />
+	<bean id="ligneCodeClientDao" class="org.tuto1.com.dao.imp.LigneCodeClientDaoImp" />
+	<bean id="LigneVenteDao" class="org.tuto1.com.dao.imp.LigneVenteDaoImp" />
+	<bean id="MvtStkDao" class="org.tuto1.com.dao.imp.MvtStkDaoImp" />
+	<bean id="RolesDao" class="org.tuto1.com.dao.imp.RolesDaoImp" />
+	<bean id="UtilisateurDao" class="org.tuto1.com.dao.imp.UtilisateurDaoImp" />
+	<bean id="VenteDao" class="org.tuto1.com.dao.imp.VenteDaoImp" />
+	<!-- service-->
+	<bean id="articleService" class="org.tuto1.com.service.imp.ArticleServiceImp">
+	<property name="dao" ref="articleDao"></property> 		
+	</bean>	
+	<bean id="commandeclientservice" class="org.tuto1.com.dao.imp.CommadeClientDAOImp" >
+			<property name="dao" ref="commandeclientDao"></property>
+	</bean>
+	<bean id="categorieservice" class="org.tuto1.com.dao.imp.CategorieDaoImp" >
+			<property name="dao" ref="categorieDao"></property>
+	</bean>
+	
+	<bean id="commandefournisseurservice" class="org.tuto1.com.dao.imp.CommandeFournisseurDaoImp" >
+			<property name="dao" ref="commandefournisseurDao"></property>
+	</bean>
+	<bean id="fournisseurservice" class="org.tuto1.com.dao.imp.FournisseurDaoImp" >
+		<property name="dao" ref="fournisseurDao"></property>
+	</bean>
+	
+	<bean id="ligneCodeClientservice" class="org.tuto1.com.dao.imp.LigneCodeClientDaoImp" >
+		<property name="dao" ref="ligneCodeClientDao"></property>
+	</bean>
+	
+	<bean id="LigneVenteservice" class="org.tuto1.com.dao.imp.LigneVenteDaoImp" >
+		<property name="dao" ref="LigneVenteDao"></property>
+	</bean>
+	
+	<bean id="MvtStkservice" class="org.tuto1.com.dao.imp.MvtStkDaoImp" >
+		<property name="dao" ref="MvtStkDao"></property>
+	</bean>
+	
+	<bean id="Rolesservice" class="org.tuto1.com.dao.imp.RolesDaoImp" >
+		<property name="dao" ref="RolesDao"></property>
+	</bean>
+	
+	<bean id="Utilisateurservice" class="org.tuto1.com.dao.imp.UtilisateurDaoImp" >
+			<property name="dao" ref="UtilisateurDao"></property>
+	</bean>
+	
+	<bean id="Venteservice" class="org.tuto1.com.dao.imp.VenteDaoImp" >
+		<property name="dao" ref="VenteDao"></property>
+	</bean>
+
+</beans>
